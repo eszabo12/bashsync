@@ -2,6 +2,28 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+alias p='python3'
+alias s='source ~/.bashrc'
+alias b='subl ~/.bashrc'
+cd() {
+    builtin cd $@
+    ls
+}
+gclone() {
+  git clone "$1" && cd "$(basename "$1" .git)"
+}
+mkdir() {
+    builtin mkdir $@
+    cd $@
+}
+eval $(thefuck --alias)
+
+function gitall() {  
+    comment=${1:-update}  
+    echo $file
+    echo $comment
+    git add * && git commit -m '$comment' && git push
+}
 
 
 
