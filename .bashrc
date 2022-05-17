@@ -148,8 +148,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-
-function cd {
-    builtin cd "$@" && ls -F
-    }
